@@ -1,8 +1,15 @@
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+from dotenv import load_dotenv
 
 
-api_key = "your api key "
+load_dotenv()
+
+
+api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=OPENAI_API_KEY)
+
+
 
 template = (
     "You are tasked with extracting specific information from the following text content: {dom_content}. "
